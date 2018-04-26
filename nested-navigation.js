@@ -7,6 +7,7 @@ import {
     NavigationActions,
     StackActions
 } from 'react-navigation';
+import {ReactNavigationRoutesDisplay} from "./lib/react-navigation-util/react-navigation-routes-display.component";
 
 global.NavigationActions = NavigationActions;
 global.StackActions = StackActions;
@@ -22,7 +23,7 @@ const DummyScreen = ({routeName, navigation, style}) => {
                 <Button title="popToTop" onPress={() => navigation.popToTop()}/>
                 <Button title="dismiss" onPress={() => navigation.dismiss()}/>
             </View>
-            <Text style={{fontSize: 8}}>{global.rootNavigator && JSON.stringify(global.rootNavigator.state)}</Text>
+            <ReactNavigationRoutesDisplay navigationState={global.rootNavigator ? global.rootNavigator.state.nav : { routes: [] }} />
         </SafeAreaView>
     );
 };
