@@ -16,7 +16,7 @@ const DummyScreen = ({routeName, navigation, style}) => {
     global.navigation = navigation;
     return (
         <SafeAreaView style={[StyleSheet.absoluteFill, {backgroundColor: 'white'}, style]}>
-            <Text style={{fontWeight: '800'}}>{routeName}({navigation.state.key})</Text>
+            <Text style={{fontWeight: '800'}}>{routeName} ({navigation.state.routeName},{navigation.state.key})</Text>
             <View style={{flexDirection: 'row'}}>
                 <Button title="back" onPress={() => navigation.goBack()}/>
                 <Button title="back(null)" onPress={() => navigation.goBack(null)}/>
